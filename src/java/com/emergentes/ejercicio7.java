@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ejercicio6", urlPatterns = {"/ejercicio6"})
-public class ejercicio6 extends HttpServlet {
-
+@WebServlet(name = "ejercicio7", urlPatterns = {"/ejercicio7"})
+public class ejercicio7 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -22,28 +21,22 @@ public class ejercicio6 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ejercicio6</title>");
+            out.println("<title>Practica 1</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1> </h1>");
-            int suma = 0;
-            suma = Obtener_suma();
-            if (suma == 7 || suma == 11) {
-                out.println("<h1>La suma es: " + suma + " ¡¡Gano el juego!! </h1>");
-            } else {
-                out.println("<h1>La suma es: " + suma + " ¡¡Perdio el juego!! </h1>");
-            }
+            out.println("<h1>Ejercicio 7</h1>");
+            out.println("<form action='salida7' method='post'>");
+            out.println("<label>Tamaño de la matriz N * N :</label>");
+            out.println("<input type='numer' name='anio'>");
+            out.println("<br>");
+            out.println("<input type='submit' value='Calcular'>");
+            out.println("<br>");
+            out.println("</form>");
             out.println("<br>");
             out.println("<a href='index.html'>Volver al inicio</a>");
             out.println("</body>");
             out.println("</html>");
         }
-        
-
-    }  
-    private int Obtener_suma() {
-        int dado1=(int)(Math.random()*6)+1;
-        int dado2=(int)(Math.random()*6)+1;
-        return(dado1 + dado2);
     }
+
 }
